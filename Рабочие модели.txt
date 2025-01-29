@@ -1,0 +1,2 @@
+Zephyr-7B-Beta
+Vikhr-Qwen-2.5-1.5B-Instruct
