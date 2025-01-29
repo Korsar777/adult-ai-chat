@@ -1,3 +1,4 @@
+import os
 import gradio as gr
 from huggingface_hub import InferenceClient
 
@@ -18,7 +19,7 @@ AVAILABLE_MODELS = {
 
 # Переменная для хранения выбранной модели
 selected_model = list(AVAILABLE_MODELS.values())[0]
-client = InferenceClient(model=selected_model, token=HUGGINGFACE_TOKEN)
+client = InferenceClient(model=selected_model, token=HUGGING_FACE_TOKEN)
 
 def switch_model(model_name):
     """
@@ -26,7 +27,7 @@ def switch_model(model_name):
     """
     global client, selected_model
     selected_model = AVAILABLE_MODELS[model_name]
-    client = InferenceClient(model=selected_model, token=HUGGINGFACE_TOKEN)
+    client = InferenceClient(model=selected_model, token=HUGGING_FACE_TOKEN)
     return f"Модель успешно переключена на: {model_name}"
 
 def respond(
